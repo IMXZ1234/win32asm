@@ -1,0 +1,68 @@
+# include   "C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\resource.h"
+
+# define ICO_MAIN           0x1000
+# define IDM_MAIN           0x2000
+# define IDA_MAIN           0x2000
+# define IDM_OPEN           0x4101
+# define IDM_OPTION         0x4102
+# define IDM_EXIT           0x4103
+# define IDM_SETFONT        0x4201
+# define IDM_SETCOLOR       0x4202
+# define IDM_INACT          0x4203
+# define IDM_GRAY           0x4204
+# define IDM_BIG            0x4205
+# define IDM_SMALL          0x4206
+# define IDM_LIST           0x4207
+# define IDM_DETAIL         0x4208
+# define IDM_TOOLBAR        0x4209
+# define IDM_TOOLBARTEXT    0x4210
+# define IDM_INPUTBAR       0x4211
+# define IDM_STATUSBAR      0x4212
+# define IDM_HELP           0x4301
+# define IDM_ABOUT          0x4301
+
+ICO_MAIN        ICON        "Main.ico"
+IDM_MAIN        MENU        DISCARDABLE
+BEGIN
+        POPUP   "文件(&F)"
+        BEGIN
+                MENUITEM    "打开文件(&O)...", IDM_OPEN
+                MENUITEM    "关闭文件(&C)...", IDM_OPTION
+                MENUITEM    SEPARATOR
+                MENUITEM    "退出(&X)", IDM_EXIT
+        END
+        POPUP   "查看(&V)"
+        BEGIN
+                MENUITEM    "字体(&F)\tAlt+F", IDM_SETFONT
+                MENUITEM    "背景色(&B)\tCtrl+Alt+F", IDM_SETCOLOR
+                MENUITEM    SEPARATOR
+                MENUITEM    "被禁用的菜单项", IDM_INACT, INACTIVE
+                MENUITEM    "被灰化的菜单项", IDM_GRAY, GRAYED
+                MENUITEM    SEPARATOR
+                MENUITEM    "大图标(&G)", IDM_BIG
+                MENUITEM    "小图标(&M)", IDM_SMALL
+                MENUITEM    "列表(&L)", IDM_LIST
+                MENUITEM    "详细资料(&D)", IDM_DETAIL
+                MENUITEM    SEPARATOR
+                POPUP       "工具栏(&T)"
+                BEGIN
+                        MENUITEM    "标准按钮(&S)", IDM_TOOLBAR
+                        MENUITEM    "文字标签(&C)", IDM_TOOLBARTEXT
+                        MENUITEM    "命令栏(&I)", IDM_INPUTBAR
+                END
+                MENUITEM    "状态栏(&U)", IDM_STATUSBAR
+        END
+        POPUP   "帮助(&H)", HELP
+        BEGIN
+                MENUITEM    "帮助主题(&H)", IDM_HELP                
+                MENUITEM    SEPARATOR
+                MENUITEM    "关于本程序(&A)", IDM_ABOUT
+        END
+END
+
+IDA_MAIN        ACCELERATORS
+BEGIN
+        VK_F1,  IDM_HELP, VIRTKEY
+        "B",    IDM_SETCOLOR, VIRTKEY, CONTROL, ALT
+        "F",    IDM_SETFONT, VIRTKEY, ALT
+END

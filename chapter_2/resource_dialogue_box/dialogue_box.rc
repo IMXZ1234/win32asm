@@ -1,0 +1,10 @@
+# include   "C:\Program Files (x86)\Windows Kits\10\bin\10.0.18362.0\x86\resource.h"
+
+DLG_MAIN    DIALOG  0, 0, 176, 66
+STYLE       DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION     "对话框模板"
+FONT        9, "宋体"
+{
+    DEFPUSHBUTTON "退出", IDOK, 120, 46, 50, 14
+    CONTROL "", -1, "Static", SS_ETCHEDHORZ | WS_CHILD | WS_VISIBLE, 7, 38, 164, 2
+}
