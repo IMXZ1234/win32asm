@@ -8,7 +8,7 @@ $(EXE): $(OBJS)
 	link $(LINK_FLAG) /out:$(EXE) $(OBJS)
 
 .asm.obj:
-	ml $(ML_FALG) $<
+	ml $(ML_FLAG) $<
 
 clean:
 	del *.obj

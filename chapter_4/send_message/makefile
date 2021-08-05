@@ -4,7 +4,6 @@ RECEIVEREXE = receiver.exe
 RECEIVEROBJ = receiver.obj
 
 LINK_FLAG = /subsystem:windows
-LINK_FLAG = /subsystem:windows
 ML_FLAG = /c /coff
 
 # 最终目标文件包含多个可以像这样写
@@ -18,7 +17,7 @@ $(RECEIVEREXE): $(RECEIVEROBJ)
 	link $(LINK_FLAG) /out:$(RECEIVEREXE) $(RECEIVEROBJ)
 
 .asm.obj:
-	ml $(ML_FALG) $<
+	ml $(ML_FLAG) $<
 
 clean:
 	del *.obj

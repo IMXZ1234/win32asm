@@ -1,27 +1,27 @@
-# nmakeå·¥å…·çš„æè¿°æ–‡ä»¶ä¾‹å­
-# å®å®šä¹‰
-# æ–‡ä»¶
+# nmake¹¤¾ßµÄÃèÊöÎÄ¼þÀý×Ó
+# ºê¶¨Òå
+# ÎÄ¼þ
 EXE = Test.exe
 OBJS = viewpe.obj
 RES = rsrc.res
 
-# ç¼–è¯‘é“¾æŽ¥é€‰é¡¹
+# ±àÒëÁ´½ÓÑ¡Ïî
 LINK_FLAG = /subsystem:windows
 ML_FLAG = /c /coff
 
-# å®šä¹‰ä¾èµ–å…³ç³»å’Œæ‰§è¡Œå‘½ä»¤
+# ¶¨ÒåÒÀÀµ¹ØÏµºÍÖ´ÐÐÃüÁî
 $(EXE): $(OBJS) $(RES)
 	link $(LINK_FLAG) /out:$(EXE) $(OBJS) $(RES)
 $(OBJS): Common.inc
 y.obj: y.inc
 
-# å®šä¹‰æ±‡ç¼–ç¼–è¯‘å’Œèµ„æºç¼–è¯‘é»˜è®¤è§„åˆ™
+# ¶¨Òå»ã±à±àÒëºÍ×ÊÔ´±àÒëÄ¬ÈÏ¹æÔò
 .asm.obj:
 	ml $(ML_FALG) $<
 .rc.res:
 	rc $<
 
-# æ¸…é™¤ä¸´æ—¶æ–‡ä»¶
+# Çå³ýÁÙÊ±ÎÄ¼þ
 clean:
 	del *.obj
 	del *.res
