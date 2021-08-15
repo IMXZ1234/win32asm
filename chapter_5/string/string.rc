@@ -1,0 +1,28 @@
+# include   "C:\masm32\include\resource.h"
+
+# define ICO_MAIN           0x1000
+# define DLG_MAIN           1
+# define IDC_CUSTOMTEXT1    101
+# define IDC_CUSTOMTEXT2    102
+
+ICO_MAIN        ICON        "Main.ico"
+DLG_MAIN DIALOG 50, 50, 125, 100
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "字符串资源"
+FONT 9, "宋体"
+{
+//CONTROL 文本, ID, 类, 风格, x, y, 宽度, 高度[, 扩展风格]
+CTEXT "语言", -1, 10, 10, 105, 12
+EDITTEXT IDC_CUSTOMTEXT1, 10, 27, 105, 12
+CTEXT "字符串资源序号", -1, 10, 44, 105, 12
+EDITTEXT IDC_CUSTOMTEXT2, 10, 61, 105, 12
+DEFPUSHBUTTON "显示(&S)", IDOK, 10, 78, 50, 14
+}
+
+STRINGTABLE
+BEGIN
+    1001    "文件未找到!"
+    1002    "无法打开文件!"
+    2001    "File not found!"
+    2002    "Can not open file!"
+END

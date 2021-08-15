@@ -110,7 +110,7 @@ _ProcDlgMain    proc    uses ebx edi esi, hWnd, uMsg, wParam, lParam
                 .elseif ax == IDC_TITLETEXT
                         shr     eax, 16
                         .if     ax == CBN_SELENDOK
-                                invoke  SendDlgItemMessage, hWnd, IDC_TITLETEXT, CB_SETCURSEL, 0, 0
+                                invoke  SendDlgItemMessage, hWnd, IDC_TITLETEXT, CB_GETCURSEL, 0, 0
                                 .if     eax == 2
                                         invoke  GetDlgItem, hWnd, IDC_CUSTOMTEXT
                                         invoke  EnableWindow, eax, TRUE
@@ -121,6 +121,9 @@ _ProcDlgMain    proc    uses ebx edi esi, hWnd, uMsg, wParam, lParam
                                         invoke  GetDlgItem, hWnd, IDC_CUSTOMTEXT
                                         invoke  EnableWindow, eax, FALSE
                                 .endif
+                        ; .else
+                        ;         mov     eax, FALSE
+                        ;         ret
                         .endif
                 .elseif ax == IDC_CUSTOMTEXT
                         invoke  GetDlgItemText, hWnd, IDC_CUSTOMTEXT, addr @szBuffer, sizeof @szBuffer
