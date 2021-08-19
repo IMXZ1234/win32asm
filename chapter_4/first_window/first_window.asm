@@ -33,7 +33,7 @@ _ProcWinMain    proc    uses ebx edi esi, hWnd, uMsg, wParam, lParam
         mov     eax, uMsg
         ; 窗口客户区绘制
         .if     eax == WM_PAINT
-                invoke  BeginPaint, hWnd, addr @stRect
+                invoke  BeginPaint, hWnd, addr @stPs
                 mov     @hDc, eax
                 invoke  GetClientRect, hWnd, addr @stRect
                 invoke  DrawText, @hDc, addr szText, -1, addr @stRect, DT_SINGLELINE or DT_CENTER or DT_VCENTER

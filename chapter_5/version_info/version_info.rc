@@ -1,0 +1,48 @@
+# include   "C:\masm32\include\resource.h"
+
+# define ICO_MAIN           0x1000
+# define DLG_MAIN           1
+
+ICO_MAIN        ICON        "Main.ico"
+DLG_MAIN DIALOG 50, 50, 113, 64
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "对话框模板"
+FONT 9, "宋体"
+{
+ICON ICO_MAIN -1, 10, 11, 18, 21
+CTEXT "简单的对话框例子\n用Win32ASM编写", -1, 36, 14, 70, 19
+DEFPUSHBUTTON "退出(&X)", IDOK, 58, 46, 50, 14
+//CONTROL 文本, ID, 类, 风格, x, y, 宽度, 高度[, 扩展风格]
+CONTROL "", -1, "Static", SS_ETCHEDHORZ | WS_CHILD | WS_VISIBLE, 6, 39, 103, 1
+}
+
+1 VERSIONINFO
+FILEVERSION 1, 2, 3, 4
+PRODUCTVERSION 2, 3, 4, 5
+FILEEOS VOS_WINDOWS32
+FILETYPE VFT_APP
+FILESUBTYPE VFT2_UNKNOWN
+BEGIN
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 0x4b0
+    END
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404b0"
+        BEGIN
+            VALUE "Comments", "Here is Comments\0"
+            VALUE "CompanyName", "Here is CompanyName\0"
+            VALUE "FileDescription", "Here is FileDescription\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Here is InternalName\0"
+            VALUE "LegalCopyright", "Here is LegalCopyright\0"
+            VALUE "LegalTrademarks", "Here is LegalTrademarks\0"
+            VALUE "OriginalFileName", "Here is OriginalFileName\0"
+            VALUE "PrivateBuild", "Here is PrivateBuild\0"
+            VALUE "ProductName", "Here is ProductName\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "Here is SpecialBuild\0"
+        END
+    END
+END

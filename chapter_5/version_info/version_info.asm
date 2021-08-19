@@ -12,14 +12,23 @@ includelib      C:\masm32\lib\kernel32.lib
 ICO_MAIN        equ     1000h
 DLG_MAIN        equ     1
 
+.const
+szFile          db      "C:\coding\win32assembly\win32asm\chapter_5\version_info\version_info.exe", 0
+szVarInfoLang   db      "\VarFileInfo\Translation", 0
+szVarInfoStr    db      "\StringFileInfo\%s\%s", 0
+
 .data?
 hInstance       dd      ?
+dwLen           dd      ?
+lpBuffer        dd      ?
+dbBuffer        db      4096    dup(?)
+szBuffer        db      4096    dup(?)
+
 
 .code
 _ProcDlgMain    proc    uses ebx edi esi, hWnd, uMsg, wParam, lParam
                 local   @stPos: POINT
                 local   @hSysMenu
-                local   @szBuffer[256]: byte
 
         mov     eax, uMsg
         .if eax == WM_CLOSE
@@ -46,5 +55,11 @@ start:
         invoke  GetModuleHandle, NULL
         mov     hInstance, eax
         invoke  DialogBoxParam, hInstance, DLG_MAIN, NULL, offset _ProcDlgMain, NULL
+        invoke  GetFileVersionInfo, offset szFile, NULL, sizeof dbBuffer, offset dbBuffer
+        invoke  VerQueryValue, offset dbBuffer, offset szVarInfoLang, offset lpBuffer, offset dwLen
+        mov     eax, lpBuffer
+        mov     eax, [eax]
+        ror     eax, 16
+        invoke  wsprintf, offset szBuffer, offset 
         invoke  ExitProcess, NULL
         end     start
