@@ -1,4 +1,4 @@
-# include   "C:\masm32\include\resource.h"
+# include   <resource.H>
 
 # define ICO_MAIN           0x1000
 # define DLG_MAIN           1

@@ -1,11 +1,11 @@
 EXE = first_window.exe
-OBJS = first_window.obj
+OBJ = first_window.obj
 
 LINK_FLAG = /subsystem:windows
 ML_FLAG = /c /coff
 
-$(EXE): $(OBJS)
-	link $(LINK_FLAG) /out:$(EXE) $(OBJS)
+$(EXE): $(OBJ)
+	link $(LINK_FLAG) /out:$(EXE) $(OBJ)
 
 .asm.obj:
 	ml $(ML_FLAG) $<

@@ -1,4 +1,4 @@
-# include   <resource.H>
+# include   <resource.h>
 
 # define ICO_MAIN       1000
 # define DLG_MAIN       1000

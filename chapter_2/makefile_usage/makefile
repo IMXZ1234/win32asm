@@ -2,7 +2,7 @@
 # 宏定义
 # 文件
 EXE = Test.exe
-OBJS = viewpe.obj
+OBJ = viewpe.obj
 RES = rsrc.res
 
 # 编译链接选项
@@ -10,9 +10,9 @@ LINK_FLAG = /subsystem:windows
 ML_FLAG = /c /coff
 
 # 定义依赖关系和执行命令
-$(EXE): $(OBJS) $(RES)
-	link $(LINK_FLAG) /out:$(EXE) $(OBJS) $(RES)
-$(OBJS): Common.inc
+$(EXE): $(OBJ) $(RES)
+	link $(LINK_FLAG) /out:$(EXE) $(OBJ) $(RES)
+$(OBJ): Common.inc
 y.obj: y.inc
 
 # 定义汇编编译和资源编译默认规则

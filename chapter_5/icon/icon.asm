@@ -2,11 +2,11 @@
 .model flat, stdcall
 option casemap: none
 
-include         C:\masm32\include\windows.inc
-include         C:\masm32\include\user32.inc
-include         C:\masm32\include\kernel32.inc
-includelib      C:\masm32\lib\user32.lib
-includelib      C:\masm32\lib\kernel32.lib
+include         windows.inc
+include         user32.inc
+include         kernel32.inc
+includelib      user32.lib
+includelib      kernel32.lib
 
 
 ICO_BIG         equ     1000h

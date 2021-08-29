@@ -1,12 +1,15 @@
 EXE = clock.exe
-OBJS = clock.obj
+OBJ = clock.obj
 RES = clock.res
+ICO = Main.ico
 
 LINK_FLAG = /subsystem:windows
 ML_FLAG = /c /coff
 
-$(EXE): $(OBJS) $(RES)
-	link $(LINK_FLAG) /out:$(EXE) $(OBJS) $(RES)
+$(EXE): $(OBJ) $(RES)
+	link $(LINK_FLAG) /out:$(EXE) $(OBJ) $(RES)
+
+$(RES): $(ICO)
 
 .asm.obj:
 	ml $(ML_FLAG) $<

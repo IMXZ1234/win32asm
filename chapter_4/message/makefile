@@ -1,11 +1,11 @@
 EXE = message.exe
-OBJS = message.obj
+OBJ = message.obj
 
 LINK_FLAG = /subsystem:windows
 ML_FLAG = /c /coff
 
-$(EXE): $(OBJS)
-	link $(LINK_FLAG) /out:$(EXE) $(OBJS)
+$(EXE): $(OBJ)
+	link $(LINK_FLAG) /out:$(EXE) $(OBJ)
 
 .asm.obj:
 	ml $(ML_FLAG) $<

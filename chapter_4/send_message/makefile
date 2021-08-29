@@ -6,8 +6,8 @@ RECEIVEROBJ = receiver.obj
 LINK_FLAG = /subsystem:windows
 ML_FLAG = /c /coff
 
-# æœ€ç»ˆç›®æ ‡æ–‡ä»¶åŒ…å«å¤šä¸ªå¯ä»¥åƒè¿™æ ·å†™
-# allå‡ºçŽ°åœ¨ç¬¬ä¸€è¡Œï¼Œè¢«è§†ä¸ºæœ€ç»ˆç›®æ ‡ï¼Œå³ä¾¿å®ƒå…¶å®žä¸æ˜¯ä¸€ä¸ªæ–‡ä»¶
+# ×îÖÕÄ¿±êÎÄ¼þ°üº¬¶à¸ö¿ÉÒÔÏñÕâÑùÐ´
+# all³öÏÖÔÚµÚÒ»ÐÐ£¬±»ÊÓÎª×îÖÕÄ¿±ê£¬¼´±ãËüÆäÊµ²»ÊÇÒ»¸öÎÄ¼þ
 all: $(SENDEREXE) $(RECEIVEREXE)
 
 $(SENDEREXE): $(SENDEROBJ)

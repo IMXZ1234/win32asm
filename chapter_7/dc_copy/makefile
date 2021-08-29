@@ -1,11 +1,11 @@
 EXE = dc_copy.exe
-OBJS = dc_copy.obj
+OBJ = dc_copy.obj
 
 LINK_FLAG = /subsystem:windows
 ML_FLAG = /c /coff
 
-$(EXE): $(OBJS)
-	link $(LINK_FLAG) /out:$(EXE) $(OBJS)
+$(EXE): $(OBJ)
+	link $(LINK_FLAG) /out:$(EXE) $(OBJ)
 
 .asm.obj:
 	ml $(ML_FLAG) $<

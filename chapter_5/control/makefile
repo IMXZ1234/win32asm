@@ -1,13 +1,16 @@
 ﻿EXE = control.exe
-OBJS = control.obj
+OBJ = control.obj
 RES = control.res
+ICO = Main.ico
+BMP = Picture1.bmp Picture2.bmp
 
 LINK_FLAG = /subsystem:windows
 ML_FLAG = /coff /c
-# RC_FLAG = /i C:\masm32\include$(RC_FLAG) 
 
-$(EXE): $(OBJS) $(RES)
-	link $(LINK_FLAG) /out:$(EXE) $(OBJS) $(RES)
+$(EXE): $(OBJ) $(RES)
+	link $(LINK_FLAG) /out:$(EXE) $(OBJ) $(RES)
+
+$(RES): $(ICO) $(BMP)
 
 .asm.obj:
 	ml $(ML_FLAG) $<
@@ -17,3 +20,4 @@ $(EXE): $(OBJS) $(RES)
 
 clean:
 	del *.obj
+	del *.res

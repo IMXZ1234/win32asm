@@ -1,4 +1,4 @@
-# include   "C:\masm32\include\resource.h"
+# include   <resource.h>
 
 # define ICO_MAIN           100
 # define IDC_MAIN           100
